@@ -13,7 +13,7 @@ void update(int ind,int val){
 
 	while(ind<=n){
 		fen[ind]+=val; 
-		ind+=(ind & ~ ind); 
+		ind+=(ind &  -ind); 
 	}
 }
 int sum(int ind){
@@ -21,7 +21,7 @@ int sum(int ind){
 	int s=0; 
 	while(ind>=1){
 		s+=fen[ind]; 
-		ind-=(ind &  ~ind ); 
+		ind-=(ind &  -ind ); 
 	}
 
 	return s; 

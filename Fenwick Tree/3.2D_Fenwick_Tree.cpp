@@ -11,7 +11,7 @@ void update(int x, int y, int val){
 
 	while(y<=n){
 		fen[x][y]+=val; 
-		y+=(y & ~ y); 
+		y+=(y & -y); 
 	}
 }
 
@@ -20,7 +20,7 @@ int sum(int x, int y){
 	while(y>=1){
 
 		sm+=fen[x][y]; 
-		y-=(y &  ~ y); 
+		y-=(y &  -y); 
 	}
 
 	return sm; 
